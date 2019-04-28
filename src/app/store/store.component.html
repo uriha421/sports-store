@@ -97,8 +97,8 @@
       <a class="pagination-next" >Next page</a>
       -->
       <ul class="pagination-list">
-        <li *ngFor="let pageNumber of pageNumbers">
-          <a class="pagination-link" aria-label="Page 1" aria-current="page" [class.is-current]="pageNumber == selectedPage" (click)="changePage(pageNumber)">{{ pageNumber }}</a>
+        <li *counter="let page of pageCount">
+          <a class="pagination-link" aria-label="Page 1" aria-current="page" [class.is-current]="page == selectedPage" (click)="changePage(page)">{{ page }}</a>
         </li>
       </ul>
     </nav>
