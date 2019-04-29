@@ -18,20 +18,13 @@
             <a class="navbar-item is-active">
               Home
             </a>
-            <a class="navbar-item">
-              Examples
+            <a class="navbar-item" routerLink='/admin'>
+              Admin
             </a>
             <a class="navbar-item">
               Documentation
             </a>
-            <span class="navbar-item">
-              <a class="button is-primary is-inverted">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>Download</span>
-              </a>
-            </span>
+            <cart-summary></cart-summary>
           </div>
         </div>
       </div>
@@ -81,6 +74,9 @@
             </div>
             <div class="content">
               {{ product.description }}
+            </div>
+            <div class="content">
+              <button class="button" (click)="addProductToCart(product)">Add to Cart</button>
             </div>
           </div>
         </div>

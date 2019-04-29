@@ -1,0 +1,39 @@
+<section class="section">
+  <div class="container">
+    <table class='table'>
+      <thead>
+        <tr>
+          <td></td>
+          <td>Product</td>
+          <td>Price</td>
+          <td>Quantity</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let line of cart.lines" class='content'>
+          <td>
+            <a class="button is-small" (click)='cart.removeLine(line.product.id)'>
+              <span class="is-small">Delete</span>
+            </a>
+          </td>
+          <td>
+            <p><strong>{{ line.product.name }}</strong></p>
+          </td>
+          <td>
+            {{ line.product.price | currency:'USD':'symbol':'2.2-2'}}
+          </td>
+          <td>
+            <input class='input is-small' type='number' [value]='line.quantity' (change)='cart.updateQuantity(line.product, $event.target.value)'/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class='section'>
+  <div class='container'>
+    <button class='button' routerLink='/store'>Continue to Shopping</button>
+    <button class='button' routerLink='/checkout'>Checkout</button>
+  </div>
+</section>

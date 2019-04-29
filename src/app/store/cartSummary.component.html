@@ -1,0 +1,10 @@
+ <span class="navbar-item">
+   <button class="button is-primary is-inverted" [disabled]="cart.itemCount == 0" routerLink="/cart">
+     <span>Your Cart: </span>
+     <span>{{ cart.itemCount}} item(s)</span>
+     <span>{{ cart.cartPrice | currency:"USD":"symbol":"2.2-2"}}</span>
+     <span class="icon">
+       <i class="fab fa-github"></i>
+     </span>
+   </button>
+ </span>

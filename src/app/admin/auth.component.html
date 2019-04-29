@@ -1,0 +1,15 @@
+<section class='section'>
+  <div class='container'>
+    <div class='content' *ngIf='errorMessage != null'>
+      {{ errorMessage }}
+    </div>
+    <form novalidate #form='ngForm' (ngSubmit)='authenticate(form)'>
+      <p>Name</p>
+      <input class='input' type='text' name='username' [(ngModel)]='username' required />
+      <p>Password</p>
+      <input class='input' type='password' name='password' [(ngModel)]='password' required />
+      <button class='button' routerLink='/'>Back</button>
+      <button class='button' type='submit'>Auth</button>
+    </form>
+  </div>
+</section>

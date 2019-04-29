@@ -1,0 +1,23 @@
+<section *ngIf='orderSent' class='section'>
+  <p>Thank your for your purchase.</p>
+  <button class='button'></button>
+</section>
+
+<section *ngIf='!orderSent' class='section'>
+  <form #form='ngForm' novalidate (ngSubmit)='submitOrder(form)'>
+    <p>name</p>
+    <input class='input' #name='ngModel' name='name' [(ngModel)]='order.name' required/>
+    <p>address</p>
+    <input class='input' #address='ngModel' name='address' [(ngModel)]='order.address' required/>
+    <p>city</p>
+    <input class='input' #name='ngModel' name='city' [(ngModel)]='order.city' required/>
+    <p>state</p>
+    <input class='input' #name='ngModel' name='state' [(ngModel)]='order.state' required/>
+    <p>zip</p>
+    <input class='input' #name='ngModel' name='zip' [(ngModel)]='order.zip' required/>
+    <p>country</p>
+    <input class='input' #name='ngModel' name='country' [(ngModel)]='order.country' required/>
+    <button class='button' routerLink='/cart'>back</button>
+    <button class='button' type='submit'>submit</button>
+  </form>
+</section>
